@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    background-color: #E8DFCA;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #1A4D2E;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    padding-bottom: 80px;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+input:hover,
+input:focus {
+    border: 2px solid #1A4D2E;
+    box-shadow: 0px 0px 0px 7px rgb(79,111,81,20%);
+    background-color: white;
+}
+
+.btn {
+    width: 170px;
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #4F6F52;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    line-height: 24px;
+    letter-spacing: 0.03rem;
+    margin: 20px 0;
+}
+
+.nutrition-info {
+    width: 350px;
+    border-radius: 10px;
+    background-color: #F3F3F3;
+    box-shadow: 0.3em 0.3em 1em rgb(79,111,81,30%);
+}
+
+.heading {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    letter-spacing: normal;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.wide-line {
+    height: 18px;
+    background-color: #e8e8e8;
+    margin: 0 20px;
+}
+
+.main-text {
+    font-family: "Roboto", sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+.thick-line {
+    height: 5px;
+    background-color: #e8e8e8;
+    margin: 0 20px;
+}
+
+.label-style {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.label-text {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+.swal2-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    color: #1A4D2E;
+}
+
