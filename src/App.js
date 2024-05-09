@@ -13,34 +13,36 @@ function App() {
   const [wordSubmitted, setWordSubmitted] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const getAnalysis = async (ingr) => {
-      setIsLoading(true);
-      const response = await fetch(`https://api.edamam.com/api/nutrition-details?app_id=${MY_ID}&app_key=${MY_KEY}`, {
-        method: "POST",
-        body: JSON.stringify(
-          {ingr : ingr}
-        ),
-        headers: {
-          'content-type' : 'application/json;charset=UTF-8' 
-        }
-      });
-      if (response.ok) {
-        setIsLoading(false);
-        const data = await response.json();
-        console.log(data);
-        setNutrition(data);
-      } else {
-        setIsLoading(false);
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: "Ingredients entered incorrectly! Please, try again",
-          showConfirmButton: false,
-          timer: 3000
-        });
+  const getAnalysis = async (ingr) => {
+    setIsLoading(true);
+
+    const response = await fetch(`https://api.edamam.com/api/nutrition-details?app_id=${MY_ID}&app_key=${MY_KEY}`, {
+      method: "POST",
+      body: JSON.stringify(
+        {ingr : ingr}
+      ),
+      headers: {
+        'content-type' : 'application/json;charset=UTF-8' 
       }
+    });
+
+    if (response.ok) {
+      setIsLoading(false);
+      const data = await response.json();
+      setNutrition(data);
+    } else {
+      setIsLoading(false);
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Ingredients entered incorrectly! Please, try again",
+        showConfirmButton: false,
+        timer: 3000
+      });
     }
+  }
+
+  useEffect(() => {
     if(wordSubmitted !== "") {
       let ingr = wordSubmitted.split(/[,,;,\n,\r]/);
       getAnalysis(ingr); 
